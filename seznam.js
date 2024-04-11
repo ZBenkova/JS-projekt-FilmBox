@@ -122,7 +122,7 @@ for(const filmovyObjekt of filmy) {
 	   <div class="card-body">
 		  <h5 class="card-title">` + filmovyObjekt.nazev +`</h5>
 		  <p class="card-text">`+filmovyObjekt.popis+`.</p>
-		  <a href="film.html" class="btn btn-primary">Přehrát</a>
+		  <a href="film.html#${filmovyObjekt.id}" class="btn btn-primary">Přehrát</a>
 	   </div>
 	</div>
  </div>`

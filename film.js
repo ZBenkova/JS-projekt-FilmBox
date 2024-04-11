@@ -104,3 +104,20 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+let pozice = location.hash
+pozice = pozice.slice(1)
+
+console.log(pozice)
+
+let mojeHledani = undefined
+
+for (const hledam of filmy) {
+	if (hledam.id == pozice) {
+		mojeHledani = hledam
+	} 
+}
+
+if (mojeHledani != undefined) {
+	document.innerHTML += ${filmy.nazev + filmy.popis + filmy.popis}
+}
