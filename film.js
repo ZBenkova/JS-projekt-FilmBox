@@ -119,5 +119,10 @@ for (const hledam of filmy) {
 }
 
 if (mojeHledani != undefined) {
-	document.innerHTML += ${filmy.nazev + filmy.popis + filmy.popis}
+	const detailFilmu = document.querySelector("#detail-filmu")
+	const cardTitle = detailFilmu.querySelector(".card-title")
+	const cardText = detailFilmu.querySelector(".card-text")
+	cardText.textContent = mojeHledani.popis
+	cardTitle.textContent = mojeHledani.nazev
 }
+
