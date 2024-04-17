@@ -122,7 +122,10 @@ if (mojeHledani != undefined) {
 	const detailFilmu = document.querySelector("#detail-filmu")
 	const cardTitle = detailFilmu.querySelector(".card-title")
 	const cardText = detailFilmu.querySelector(".card-text")
+	const obrazek = detailFilmu.querySelector(".img-fluid")
 	cardText.textContent = mojeHledani.popis
 	cardTitle.textContent = mojeHledani.nazev
+	obrazek.src = mojeHledani.plakat.url
+
 }
 
