@@ -115,7 +115,7 @@ let mojeHledani = undefined
 for (const hledam of filmy) {
 	if (hledam.id == pozice) {
 		mojeHledani = hledam
-	} 
+	}
 }
 
 if (mojeHledani != undefined) {
@@ -126,6 +126,31 @@ if (mojeHledani != undefined) {
 	cardText.textContent = mojeHledani.popis
 	cardTitle.textContent = mojeHledani.nazev
 	obrazek.src = mojeHledani.plakat.url
-
 }
+
+const formular = document.querySelector("#note-form")
+
+
+const mojeFunkce = (event) => {
+	event.preventDefault()
+	const pole = document.querySelector("#message-input")
+	const policko = document.querySelector("#terms-checkbox")
+
+	if (pole.value.length > 0) {
+		if (policko.checked != true) {
+			policko.classList.add("is-invalid")
+		}
+		else {
+			policko.classList.remove("is-invalid")
+			const odstavec = document.querySelector(".card-text")
+			odstavec.innerHTML += '<p class="card-text">' + pole.value + '</p>' 
+		}
+		pole.classList.remove("is-invalid")
+
+	} else {
+		pole.classList.add("is-invalid")
+	}
+}
+
+formular.addEventListener("submit", mojeFunkce)
 
